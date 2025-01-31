@@ -16,11 +16,13 @@ function App() {
       <hr/>
       <section>
         <h2>Todos</h2>
-        <Task task='Learn React' />
-        <Task task='Be Awesome!' />
+        <div class='allTodos'>
+          <Task task='Learn React' />
+          <Task task='Be Awesome!' /> 
+        </div>
       </section>
     </main>
-    </> 
+    </>
   )
 }
 

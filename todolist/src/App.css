@@ -2,13 +2,3 @@
   margin: 0 auto;
   padding: 2rem;
 }
-
-.allTodos {
-  display: flex;
-  flex-direction: column;
-}
-
-.todoTask {
-  display: flex;
-  gap: 5px
-}
