@@ -14,10 +14,38 @@ const useToDo = () => {
         setTodo([...updatedTodos])
     }
 
+    const handleCheck = (t) => {
+    }
+
+    const deleteSelection = () => {
+        let updatedTodos = todo.filter((item) => item.checked === false)
+        setTodo([...updatedTodos])
+    }
+
+    const selectAll = () => {
+        let newList = [...todo]
+        {newList.map((t => 
+            t.checked = true
+        ))}
+        setTodo(newList)
+    }
+
+    const deselectAll = () => {
+        let newList = [...todo]
+        {newList.map((t => 
+            t.checked = false
+        ))}
+        setTodo(newList)
+    }
+
     return {
         todo,
         addTask,
-        deleteTask
+        deleteTask,
+        handleCheck,
+        deleteSelection,
+        selectAll,
+        deselectAll
     };
 }
 
