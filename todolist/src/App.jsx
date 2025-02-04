@@ -1,7 +1,16 @@
 import './App.css'
-import Task from './Task'
+// importe le formulaire
+import ToDoListForm from './components/ToDoListForm'
+import ToDoList from './components/ToDoList'
+import useToDo from './hooks/useToDo'
 
 function App() {
+
+  const {
+    todo,
+    addTask,
+    deleteTask
+  } = useToDo();
 
   return (
     <>
@@ -9,17 +18,14 @@ function App() {
       <h1>My Todo App</h1>
     </header>
     <main>
-      <form className='input-container'>
-        <input className='input' type="text" id = 'type' />
-      </form>
-      <button className='button'>Add Todo</button>
+      {/* On le positionne au bonne endroit */}
+      {/* On passe en attribut notre props qui est égale a l'endroit ou on veut l'envoyé  */}
+      {/* l'input est envoyé dans le useTodo dans fonction addTask */}
+      <ToDoListForm userInputValue={addTask}/>
       <hr/>
       <section>
         <h2>Todos</h2>
-        <div class='allTodos'>
-          <Task task='Learn React' />
-          <Task task='Be Awesome!' /> 
-        </div>
+        <ToDoList todo={todo} deleteTodo={deleteTask}/>
       </section>
     </main>
     </>
