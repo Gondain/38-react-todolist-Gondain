@@ -5,8 +5,7 @@ const useToDo = () => {
     const [todo, setTodo] = useState([])
 
     const addTask = (userInput) => {
-        setTodo([...todo, {id: Date.now(), checked: false, name: userInput}]);
-        console.log(todo);
+        setTodo([...todo, {id:crypto.randomUUID(), checked: false, name: userInput}]);
     }
 
     const deleteTask = (t) => {
@@ -15,6 +14,12 @@ const useToDo = () => {
     }
 
     const handleCheck = (t) => {
+        [...todo].forEach((item) => {
+            if (item.id === t.id) {
+                t.checked = !t.checked
+            }
+        });
+        setTodo([...todo])
     }
 
     const deleteSelection = () => {
@@ -23,19 +28,17 @@ const useToDo = () => {
     }
 
     const selectAll = () => {
-        let newList = [...todo]
-        {newList.map((t => 
+        [...todo].map((t => 
             t.checked = true
-        ))}
-        setTodo(newList)
+        ))
+        setTodo([...todo])
     }
 
     const deselectAll = () => {
-        let newList = [...todo]
-        {newList.map((t => 
+        [...todo].map((t => 
             t.checked = false
-        ))}
-        setTodo(newList)
+        ))
+        setTodo([...todo])
     }
 
     return {

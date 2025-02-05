@@ -3,21 +3,23 @@ import React from "react"
 const ToDoList = ({todo, deleteTodo, handleCheck, deleteSelection, selectAll, deselectAll}) => {
     return (
         <>
-        <button onClick={selectAll}>Select All</button>
-        <button onClick={deselectAll}>Deselect All</button>
-        <ul>
+        <hr />
+            <button className="submitButton selectAll" onClick={selectAll}>Select All</button>
+            <button className="submitButton" onClick={deselectAll}>Deselect All</button>
+            <div className="todolist">
+                <ul>
             {todo.map((t => 
-                <li key={t.id}>
-                    <input type="checkbox" checked = {t.checked}
-                    onChange={() => handleCheck(t)}/> 
+                <li key={t.id} className="todo">
+                    <input className="checkbox" type="checkbox" checked = {t.checked}
+                    onChange={() => handleCheck(t)}/>
                     <span className="todoText">{t.name}</span> 
-                    <button onClick={() => deleteTodo(t)}>✖️</button>
+                    <button onClick={() => deleteTodo(t)}>❌</button>
                 </li>
             ))}
-        </ul>
-        <button onClick={deleteSelection}>Delete selection</button>
+                </ul>
+            </div>
+        <button className="submitButton" onClick={deleteSelection}>Delete selection</button>
         </>
     )
 }
-
 export default ToDoList;

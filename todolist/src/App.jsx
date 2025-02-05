@@ -30,7 +30,7 @@ function App() {
       <hr/>
       <section>
         <div>
-          <h2>Todos</h2>
+          <h2>Todos:</h2>
           <ToDoList 
             todo={todo} 
             deleteTodo={deleteTask} 

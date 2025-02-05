@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color:  #463F3A;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,20 +21,35 @@ p {
 ul {
   list-style: none;
   padding: 0;
+  width: 26%;
+  display: flex;
+  flex-direction: column;
 }
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+
+li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+header {
+  background-color: #8A817C;
 }
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  color: #F7FFF7
 }
 
 .inputText {
-  margin-right: 30px;
+  margin-bottom: 25px;
+  background-color: #8A817C;
+  color: #F7FFF7;
+}
+
+.inputText::placeholder {
+  color: #F7FFF7;
+  opacity: 50%;
 }
 
 .todoText {
@@ -48,14 +63,14 @@ h1 {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #8A817C;
   cursor: pointer;
   transition: border-color 0.25s;
   margin-bottom: 10px;
 }
 .submitButton:hover {
-  background-color: black;
-  color: white;
+  background-color: #F7FFF7;
+  color: #463F3A;
   transition: all, 0.5s;
 }
 .submitButton:focus,
@@ -63,6 +78,25 @@ h1 {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+
+.selectAll {
+  margin-right: 22px;
+}
+
+.checkbox {
+  margin-right: 15px;
+}
+
+.todolist {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.todo {
+  margin-bottom: 5px;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

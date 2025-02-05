@@ -30,9 +30,9 @@ const ToDoListForm = ({userInputValue}) => {
     return (
         <>
             {/* onChange qui permet d'enregister la value saisie dans le useState */}
-            <input className="inputText" type="text" value={userInput} onChange={handleChange} placeholder="Enter a new task..." onKeyDown={submitEnter}/>
+            <input maxLength={30} className="inputText" type="text" value={userInput} onChange={handleChange} placeholder="Enter a new task..." onKeyDown={submitEnter}/> <br />
             {/* onClick qui permet d'envoyé la valeur de l'input */}
-            <button className="submitButton" onClick={submitClick}>ADD TODO</button>
+            <button className="submitButton" onClick={submitClick}>Add Todo</button>
         </>
     )
 }
